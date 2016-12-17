@@ -59,9 +59,11 @@
 // })
 myApp.controller('moneyController',['$scope','$http','$sce','$routeParams',function($scope,$http,$sce,$routeParams){
     $scope.moneyctrl=function(){
+      $scope.pageid=$routeParams.pageid||1;
+
         $http({
             url:'http://mmb.ittun.com/api/getmoneyctrl',
-            params:{'pageid':$routeParams.pageid}
+            params:{'pageid':$scope.pageid}
         })
         .success(function(data){
               for(var i=0;i<data.result.length;i++){
@@ -69,12 +71,13 @@ myApp.controller('moneyController',['$scope','$http','$sce','$routeParams',funct
             // data.result[i].bjShop=$sce.trustAsHtml(data.result[i].bjShop)
         }
         $scope.productlist=data.result;
+
         $scope.totalpage=Math.ceil(data.totalCount/data.pagesize);
-        $scope.prevpage=($routeParams.pageid-0)-1;
+        $scope.prevpage=($scope.pageid-0)-1;
         if($scope.prevpage<=1){
             $scope.prevpage=1
         }
-        $scope.nextpage=($routeParams.pageid-0)+1;
+        $scope.nextpage=($scope.pageid-0)+1;
         if($scope.nextpage>=$scope.totalpage){
             $scope.nextpage=$scope.totalpage
         }
@@ -82,7 +85,7 @@ myApp.controller('moneyController',['$scope','$http','$sce','$routeParams',funct
         for(var i=0;i<$scope.totalpage;i++){
             $scope.pages.push(i+1)
         }
-        $scope.pageid=$routeParams.pageid;
+        // $scope.pageid=$routeParams.pageid;
 
         })
     }()
