@@ -95,7 +95,33 @@ myApp.controller('productlistcontroller',['$scope','$http','$sce','$routeParams'
                 data.result[i].productImg=$sce.trustAsHtml(data.result[i].productImg)
             }
             $scope.productlists=data.result;
+             // 翻页功能实现
+             $scope.totalpage=Math.ceil(data.totalCount/data.pagesize)
+            $scope.prevpage=($routeParams.pageid-0)-1;
+            if($scope.prevpage<=1){
+                $scope.prevpage=1;
+            };
+            $scope.nextpage=($routeParams.pageid-0)+1;
+            if($scope.nextpage>=$scope.totalpage){
+                $scope.nextpage=$scope.totalpage;
+            };
+            $scope.categoryid=$routeParams.categoryid;
+            $scope.pages=[];
+            for(var i=0;i<$scope.totalpage;i++){
+                $scope.pages.push(i+1)
+            }
+            $scope.pageid=$routeParams.pageid;
+        })
+    }();
+    $scope.getCategoryid=function(){
+        $http({
+            url:'http://mmb.ittun.com/api/getcategorybyid',
+            params:{'categoryid':$routeParams.categoryid}
+        })
+        .success(function(data){
+            $scope.category=data.result[0].category;
         })
     }()
+   
 }])
 

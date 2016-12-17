@@ -73,7 +73,7 @@ myApp.controller('indexController',['$scope','$http','$sce', function ($scope, $
             for(var i=0;i<data.result.length;i++){
                 data.result[i].productImgSm=$sce.trustAsHtml(data.result[i].productImgSm)
             }
-            $scope.moneyCtrl=data.result
+            $scope.moneyCtrl=data.result;
         });
     }()
 }])

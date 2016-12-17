@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
+
  <section id="productList" >
         <!-- 分类标题区域 -->
         <div class="category-title">
             <ol class="breadcrumb">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">全部分类</a></li>
-                <li>空调</li>
+                <li><a href="#/">首页</a></li>
+                <li><a href="#/category">全部分类</a></li>
+                <li>{{category}}</li>
             </ol>
             <a href="#" class="btn btn-default">筛选</a>
         </div>
         <!-- 主体商品区域 -->
         <div class="product-list">
             <div class="media" ng-repeat='value in productlists'>
-                <a class="media-left" href="#" ng-bind-html='value.productImg'>
+                <a class="media-left" href="#/bijia/{{value.productId}}"  ng-bind-html='value.productImg'>
                     
                 </a>
                 <div class="media-body">
@@ -32,21 +26,19 @@
         <!-- 商品的操作  上一页下一页-->
         <div class="prodocut-option clearfix">
             <!-- <input type="button" value="上一页" class="btn btn-default pull-left"> -->
-            <a href="#" class="btn btn-default page-prev">上一页</a>
-            <a href="#" class="btn btn-default page-next">下一页</a>
+            <a href="#/productlist/{{categoryid}}/{{prevpage}}" class="btn btn-default page-prev">上一页</a>
+            <a href="#/productlist/{{categoryid}}/{{nextpage}}" class="btn btn-default page-next">下一页</a>
             <!-- <input type="button" value="下一页" class="btn btn-default pull-right"> -->
             <div class="dropdown">
                 <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        第一页
+                        第{{pageid}}页
                         <span class="caret"></span>
                     </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li>第一页</li>
-                    <li>第二页</li>
-                    <li>第三页</li>
+                    <li ng-repeat='value in pages' ><a href="#/productlist/{{categoryid}}/{{value}}"></a>
+                    第{{value}}页</li>
+                    
                 </ul>
             </div>
         </div>
     </section>
-</body>
-</html>

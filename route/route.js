@@ -16,6 +16,10 @@ myApp.config(['$routeProvider',function($routeProvider){
                         controller:'productlistcontroller',
                         templateUrl:'./temp/productlist-tmp.html'
                     })
+                    .when('/bijia/:productid',{
+                        controller:'bijiaController',
+                        templateUrl:'./temp/bijia-temp.html'
+                    })
                     .otherwise({
                         redirectTo: '/'
                     });
