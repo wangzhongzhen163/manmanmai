@@ -18,10 +18,9 @@
         <div class="product-info">
             <div class="product-bijia">
                 <div class="product-name">
-                    {{products.productName}}
+                 
                 </div>
                 <div class="product-img" ng-bind-html='products.productImg'>
-                    <!-- <img src="http://pro.zuyushop.com:8015/ProPic/20166/Thumb/Thumb_2016060015515937123.png" alt="乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视" width="170"> -->
                 </div>
                 <div class="product-collect">
                     <a href="javascript:setfav(473088);">
@@ -48,9 +47,17 @@
                 <div>网友评价</div>
             </div>
             <div class="product-com-list">
-                <div class="more">
-                    <a class="morein" href="comment.aspx?id=473088">查看更多评价</a>
-                </div>
+            <ul>
+            <li ng-repeat='value in prductcoms'>
+                <div class="clearfix"> <span class="pull-left com-name">{{value.comName}}             </span>
+                    <span class="pull-right com-time">{{value.comTime}}               </span></div>
+                <div class="clearfix"> <span class="star pull-left com-star"><em class="star5"></em></span> <span class="pull-right com-from">                   {{value.comFrom}}                </span></div>
+                <div class="com-content">{{value.comContent}}</div>
+            </li>
+        </ul>
+            <div class="more">
+                <a class="morein" href="comment.aspx?id=473088">查看更多评价</a>
+            </div>
             </div>
         </div>
     </section>

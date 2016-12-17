@@ -20,6 +20,18 @@ myApp.config(['$routeProvider',function($routeProvider){
                         controller:'bijiaController',
                         templateUrl:'./temp/bijia-temp.html'
                     })
+                    .when('/moneyctrl/:pageid?',{
+                        templateUrl:'./temp/moneyctrl-temp.html',
+                        controller:'moneyController'
+                    })
+                    .when('/gsproduct/:shopid/:areaid/:shopName/:areaName',{
+                        controller:'gsproductController',
+                        templateUrl:'./temp/gsproduct-temp.html'
+                    })
+                     .when('/gsproduct',{
+                        controller:'gsproductController',
+                        templateUrl:'./temp/gsproduct-temp.html'
+                    })
                     .otherwise({
                         redirectTo: '/'
                     });

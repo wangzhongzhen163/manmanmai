@@ -53,7 +53,7 @@
 // });
 
 myApp.controller('bijiaController',['$scope','$http','$sce','$routeParams',function($scope,$http,$sce,$routeParams){
-    var getProducts=function(){
+    $scope.getProducts=function(){
             $http({
         url:'http://mmb.ittun.com/api/getproduct',
         params:{'productid':$routeParams.productid}
@@ -65,5 +65,15 @@ myApp.controller('bijiaController',['$scope','$http','$sce','$routeParams',funct
         }
         $scope.products=data.result[0];
     })
-}()
+}();
+$scope.getproductcom=function(){
+    $http({
+        url:'http://mmb.ittun.com/api/getproductcom',
+        params:{ "productid": $routeParams.productid}
+    })
+    .success(function(data){
+        $scope.prductcoms=data.result;
+        console.log(data)
+    })
+}();
 }])

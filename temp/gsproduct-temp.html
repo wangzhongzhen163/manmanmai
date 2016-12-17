@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <main class="gs-product">
+        <div class="list">
+            <div class="hd">
+                <div class="filter">
+                     <ul>
+                        <li class="on"><a href="javascript:;" ng-click='showctrl(0)'>{{shopname}}<i></i></a></li>
+                        <li class=""><a href="javascript:;" ng-click='showctrl(1)'>{{areaname.split('（')[0]}}<i></i></a></li>
+                        <li class=""><a href="javascript:;">1元<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="search"> <i class="icon-search"></i></div>
+                <!--各种下拉-->
+                <div class="popsort popbox" ng-class='{on:boxshow===0}' id="shop">
+                    <ul>
+                        <li class="on" ng-repeat='value in gsShops'><a href="#/gsproduct/{{value.shopId}}/{{areaid}}/{{value.shopName}}/{{areaname}}">{{value.shopName}}</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="popcat popbox" ng-class='{on:boxshow===1}' id="area">
+                    <ul>
+                        <li class="on" ng-repeat='value in gsAreas'><a href="#/gsproduct/{{shopid}}/{{value.areaId}}/{{shopname}}/{{value.areaName}}">{{value.areaName}}</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="popprice popbox" id="price">
+                    <ul>
+                        <li class="on"><a href="javascript:GetRequest('areaMoney', 0);">全部价格</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bd gs-product-list">
+                    <ul class="masonry" id="container">
+                <li ng-repeat='value in gsproducts'>
+                <a href="http://item.m.jd.com/ware/view.action?wareId=1274360" class="item border-img">
+                    <div class="pic"><img src="{{value.productImg}}" style="width: 174px; height: 174px;"></div>
+                    <div class="title">{{value.productName}}</div>
+                    <div class="other">
+                        <div class="price">{{value.productPrice}}</div>
+                        <div class="btn">去凑单</div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </li>       
+        </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

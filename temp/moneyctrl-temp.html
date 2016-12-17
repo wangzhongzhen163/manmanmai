@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--       <header id="header">
+        <h4>省钱控</h4>
+    </header>
+ -->
+ <section id="productList">
+        <!-- 主体商品区域 -->
+        <div class="product-list">
+            <div class="media" ng-repeat='value in productlist'>
+                <a class="media-left" href="#" ng-bind-html='value.productImgSm'>
+                   
+                </a>
+                <div class="media-body">
+                    <h5>{{value.productName}}</h5>
+                    <p class="price">{{value.productPinkage}}</p>
+                    <span class="from">{{value.productFrom}} | {{value.productTime}}</span>
+                    <span class="comment"><i class="icon-comment"></i> 1</span>
+                </div>
+            </div>
+           
+        </div>
+        <!-- 商品的操作  上一页下一页-->
+        <div class="prodocut-option clearfix">
+            <!-- <input type="button" value="上一页" class="btn btn-default pull-left"> -->
+            <a href="#/moneyctrl/{{prevpage}}" class="btn btn-default page-prev">上一页</a>
+            <a href="#/moneyctrl/{{nextpage}}" class="btn btn-default page-next">下一页</a>
+            <!-- <input type="button" value="下一页" class="btn btn-default pull-right"> -->
+            <div class="dropdown">
+                <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        第({{pageid}})页
+                        <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li ng-repeat='value in pages'>第({{value}})页</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -75,5 +75,8 @@ myApp.controller('indexController',['$scope','$http','$sce', function ($scope, $
             }
             $scope.moneyCtrl=data.result;
         });
-    }()
+    }();
+    $scope.toggle=function(){
+        $('#menu>.row>div:nth-last-child(-n+4)').toggle(200)
+    }
 }])

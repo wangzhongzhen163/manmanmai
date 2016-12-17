@@ -10,7 +10,7 @@
 <section id="menu" ng-controller="indexController">
 	<div class="row">
 		<div class="col-xs-3" ng-repeat='value in indexmenus track by $index'>
-			<a href="{{value.titlehref}}">
+			<a href="{{value.titlehref}}" ng-click='toggle()'>
 				<p ng-bind-html='value.img'></p>
 				<p>{{value.name}}</p>
 			</a>
