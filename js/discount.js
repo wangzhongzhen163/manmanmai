@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,c,u){$.ajax({url:"http://mmb.ittun.com/api/getdiscountproduct",data:{productid:c},success:function(c){var u=template("discountProduct",c);t.html(u)}})}t($(".discount-product"),$.getUrlParam("productid"))});

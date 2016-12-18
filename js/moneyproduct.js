@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,c,o){$.ajax({url:"http://mmb.ittun.com/api/getmoneyctrlproduct",data:{productid:c},success:function(c){var o=template("moneyProduct",c);t.html(o)}})}t($(".money-product"),$.getUrlParam("productid"))});

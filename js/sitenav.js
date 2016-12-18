@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,i){$.ajax({url:"http://mmb.ittun.com/api/getsitenav",success:function(i){var n=template("siteNav",i);t.html(n)}})}t($(".site-nav"))});

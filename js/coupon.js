@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,c){$.ajax({url:"http://mmb.ittun.com/api/getcoupon",success:function(c){var n=template("couponTitle",c);t.html(n)}})}t($(".coupon-title"))});

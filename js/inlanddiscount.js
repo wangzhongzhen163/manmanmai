@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,i){$.ajax({url:"http://mmb.ittun.com/api/getinlanddiscount",success:function(i){var n=template("productList",i);t.html(n),$(".loading").hide()}})}t($(".inland-discount-list"))});
