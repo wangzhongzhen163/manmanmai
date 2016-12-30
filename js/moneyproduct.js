@@ -11,7 +11,7 @@
      getMoneyProduct(productid);
      function getMoneyProduct(productid) {
          $.ajax({
-             url: "http://mmb.ittun.com/api/getmoneyctrlproduct",
+             url: "https://mmb.ittun.com/api/getmoneyctrlproduct",
              data: {
                  "productid": productid
              },success:function (data) {

@@ -11,7 +11,7 @@ $(function() {
 
     function getbaicaijiaTitle() {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbaicaijiatitle",
+            url: "https://mmb.ittun.com/api/getbaicaijiatitle",
             success: function(data) {
                 var html = template("baicaijiaTitleTmp", data);
                 $('.bcj-title > .ul-wapper > ul').html(html)
@@ -33,7 +33,7 @@ $(function() {
 
     function getbaicaijiaProduct(titleid) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbaicaijiaproduct",
+            url: "https://mmb.ittun.com/api/getbaicaijiaproduct",
             data: {
                 "titleid": titleid
             },

@@ -37,14 +37,14 @@
 var categoryController=myApp.controller('categoryController',['$scope','$http','$sce',function($scope,$http,$sce){
     $scope.getCategoryTitle=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getcategorytitle'
+            url:'https://mmb.ittun.com/api/getcategorytitle'
         }).success(function(data){
             $scope.categorytitles=data.result;
         })
     }();
     $scope.getCategory=function(titleid){
         $http({
-            url:'http://mmb.ittun.com/api/getcategory' ,
+            url:'https://mmb.ittun.com/api/getcategory' ,
             params:{'titleid':titleid}
         }).success(function(data){
             $scope.categorys=data.result;

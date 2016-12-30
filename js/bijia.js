@@ -55,7 +55,7 @@
 myApp.controller('bijiaController',['$scope','$http','$sce','$routeParams',function($scope,$http,$sce,$routeParams){
     $scope.getProducts=function(){
             $http({
-        url:'http://mmb.ittun.com/api/getproduct',
+        url:'https://mmb.ittun.com/api/getproduct',
         params:{'productid':$routeParams.productid}
     })
     .success(function(data){
@@ -68,7 +68,7 @@ myApp.controller('bijiaController',['$scope','$http','$sce','$routeParams',funct
 }();
 $scope.getproductcom=function(){
     $http({
-        url:'http://mmb.ittun.com/api/getproductcom',
+        url:'https://mmb.ittun.com/api/getproductcom',
         params:{ "productid": $routeParams.productid}
     })
     .success(function(data){

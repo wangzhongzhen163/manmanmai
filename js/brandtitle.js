@@ -10,7 +10,7 @@ $(function() {
      getBrandTitle();
     function getBrandTitle() {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbrandtitle",
+            url: "https://mmb.ittun.com/api/getbrandtitle",
             success: function(data) {
                 var html = template("brandTitleTmp", data);
                 $('.brand-title').html(html);

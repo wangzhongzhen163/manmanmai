@@ -62,7 +62,7 @@ myApp.controller('moneyController',['$scope','$http','$sce','$routeParams',funct
       $scope.pageid=$routeParams.pageid||1;
 
         $http({
-            url:'http://mmb.ittun.com/api/getmoneyctrl',
+            url:'https://mmb.ittun.com/api/getmoneyctrl',
             params:{'pageid':$scope.pageid}
         })
         .success(function(data){

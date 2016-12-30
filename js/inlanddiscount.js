@@ -23,7 +23,7 @@ $(function() {
     var data1 = {};
     var resultLength = 0;
     $.ajax({
-        url: "http://mmb.ittun.com/api/getinlanddiscount",
+        url: "https://mmb.ittun.com/api/getinlanddiscount",
         success: function(data) {
             data1 = data;
             var newdata = {
@@ -66,7 +66,7 @@ $(function() {
             //到底部了
             $('.loading').show();
             $.ajax({
-                url: "http://mmb.ittun.com/api/getinlanddiscount",
+                url: "https://mmb.ittun.com/api/getinlanddiscount",
                 success: function(data) {
                     var newData = {
                         "result": []
@@ -92,7 +92,7 @@ $(function() {
     var data1 = {};
     var resultLength = 0;
     $.ajax({
-            url: "http://mmb.ittun.com/api/getinlanddiscount",
+            url: "https://mmb.ittun.com/api/getinlanddiscount",
             success: function(data) {
                 data1 = data;
                 var newdata = {
@@ -132,7 +132,7 @@ $(function() {
             //到底部了
             $('.loading').show();
             $.ajax({
-                url: "http://mmb.ittun.com/api/getinlanddiscount",
+                url: "https://mmb.ittun.com/api/getinlanddiscount",
                 success: function(data) {
                     var newData = {
                         "result": []

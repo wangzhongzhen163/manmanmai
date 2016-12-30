@@ -45,7 +45,7 @@ myApp.controller('indexController',['$scope','$http','$sce', function ($scope, $
     $scope.getindexMenu= function () {
         //获取主页菜单的函数
         $http({
-            url:'http://mmb.ittun.com/api/getindexmenu'
+            url:'https://mmb.ittun.com/api/getindexmenu'
         }).success(function (data) {
             for(var i=0;i<data.result.length;i++){
                data.result[i].img=$sce.trustAsHtml(data.result[i].img)
@@ -68,7 +68,7 @@ myApp.controller('indexController',['$scope','$http','$sce', function ($scope, $
     }();
     $scope.getMoneyctrl=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getmoneyctrl'
+            url:'https://mmb.ittun.com/api/getmoneyctrl'
         }).success(function(data){
             for(var i=0;i<data.result.length;i++){
                 data.result[i].productImgSm=$sce.trustAsHtml(data.result[i].productImgSm)

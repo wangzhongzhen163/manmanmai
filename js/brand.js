@@ -13,7 +13,7 @@ $(function() {
 
     function getBrandList(brandtitleid) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbrand",
+            url: "https://mmb.ittun.com/api/getbrand",
             data: {
                 "brandtitleid": brandtitleid
             },
@@ -26,7 +26,7 @@ $(function() {
 
     function getBrandProduct(brandtitleid) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbrandproductlist",
+            url: "https://mmb.ittun.com/api/getbrandproductlist",
             data: {
                 "brandtitleid": brandtitleid,
                 "pagesize": 4
@@ -42,7 +42,7 @@ $(function() {
 
     function getBrandProductCom(product) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getproductcom",
+            url: "https://mmb.ittun.com/api/getproductcom",
             data: {
                 "productid": product.productId
             },

@@ -88,7 +88,7 @@
 myApp.controller('productlistcontroller',['$scope','$http','$sce','$routeParams',function($scope,$http,$sce,$routeParams){
     $scope.getProductlist=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getproductlist',
+            url:'https://mmb.ittun.com/api/getproductlist',
             params:{'categoryid':$routeParams.categoryid,'pageid':$routeParams.pageid}
         }).success(function(data){
             for(var i=0;i<data.result.length;i++){
@@ -115,7 +115,7 @@ myApp.controller('productlistcontroller',['$scope','$http','$sce','$routeParams'
     }();
     $scope.getCategoryid=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getcategorybyid',
+            url:'https://mmb.ittun.com/api/getcategorybyid',
             params:{'categoryid':$routeParams.categoryid}
         })
         .success(function(data){

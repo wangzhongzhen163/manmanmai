@@ -143,7 +143,7 @@ myApp.controller('gsproductController',['$scope','$http','$sce','$routeParams',f
     };
     $scope.getShops=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getgsshop'
+            url:'https://mmb.ittun.com/api/getgsshop'
         })
         .success(function(data){
             $scope.gsShops=data.result;
@@ -151,7 +151,7 @@ myApp.controller('gsproductController',['$scope','$http','$sce','$routeParams',f
     }();
         $scope.getAreas=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getgsshoparea'
+            url:'https://mmb.ittun.com/api/getgsshoparea'
         })
         .success(function(data){
             $scope.gsAreas=data.result;
@@ -159,7 +159,7 @@ myApp.controller('gsproductController',['$scope','$http','$sce','$routeParams',f
     }();
     $scope.getgsproduct=function(){
         $http({
-            url:'http://mmb.ittun.com/api/getgsproduct',
+            url:'https://mmb.ittun.com/api/getgsproduct',
             params:{'shopid':$scope.shopid,'areaid':$scope.areaid}
         })
         .success(function(data){
